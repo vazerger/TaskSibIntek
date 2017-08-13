@@ -28,5 +28,12 @@ namespace SibIntek.Models
             _db.SaveChanges();
         }
 
+        public void deleteTasks(Tasks task)
+        {
+            var _task = _db.Tasks.Find(task.Id);
+            _db.Tasks.Remove(_task);
+            _db.SaveChanges();
+        }
+
     }
 }

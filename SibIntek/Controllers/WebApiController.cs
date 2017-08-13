@@ -51,5 +51,21 @@ namespace SibIntek.Controllers
                 return new { Error = true, Message = e.Message, Class = "red" };
             }
         }
+
+        // GET api/addTasks
+        [HttpPost]
+        [Route("api/deleteTask")]
+        public object deleteTask(Tasks task)
+        {
+            try
+            {
+                repository.deleteTasks(task);
+                return new { Error = false, Message = "Task delete...", Class = "green" };
+            }
+            catch (Exception e)
+            {
+                return new { Error = true, Message = e.Message, Class = "red" };
+            }
+        }
     }
 }

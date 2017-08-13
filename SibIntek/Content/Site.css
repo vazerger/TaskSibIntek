@@ -33,6 +33,7 @@ paper line {
     padding: 7px 10px 10px 12px;
     background-color: #fff;
     color: #746d6e;
+    position: relative;
 }
 
 paper line:hover {
@@ -64,8 +65,15 @@ paper line.header input {
 
 ::-webkit-input-placeholder {color:#aeaeae;}
 ::-moz-placeholder          {color:#aeaeae;}
+::-ms-input-placeholder      {color:#aeaeae;}
 :-moz-placeholder           {color:#aeaeae;}
 :-ms-input-placeholder      {color:#aeaeae;}
+
+paper line.header input::-webkit-input-placeholder {color:#aeaeae;}
+paper line.header input::-moz-placeholder          {color:#aeaeae;}
+paper line.header input::-ms-input-placeholder      {color:#aeaeae;}
+paper line.header input:-moz-placeholder           {color:#aeaeae;}
+paper line.header input:-ms-input-placeholder      {color:#aeaeae;}
 
 paper line.header input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
 paper line.header input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
@@ -187,9 +195,44 @@ span.checked {
     text-decoration: line-through;
 }
 
-.message {
+#message {
     font-size: 16px;
+    height: 30px;
 }
 
 .red { color: red; }
 .green { color: green; }
+
+
+paper .del {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+paper .del {
+position: absolute;
+right: 5px;
+top: 15px;
+width: 32px;
+height: 32px;
+opacity: 0.3;
+cursor: pointer;
+}
+paper .del:hover {
+opacity: 1;
+}
+paper .del:before, paper .del:after {
+position: absolute;
+left: 15px;
+content: ' ';
+height: 15px;
+width: 2px;
+background-color: #333;
+}
+paper .del:before {
+transform: rotate(45deg);
+}
+paper .del:after {
+transform: rotate(-45deg);
+}
